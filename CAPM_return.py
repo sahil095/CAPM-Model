@@ -3,6 +3,7 @@ import pandas as pd
 import yfinance as yf
 import datetime
 import pandas_datareader.data as web
+from helper_functions import interactive_plot, normalize_charts, daily_return, calculate_beta
 
 st.set_page_config(page_title = "CAPM", page_icon = "chart_with_upwards_trend", layout='wide')
 st.title('Capital Asset Pricing Model')
@@ -41,3 +42,19 @@ with col1:
 with col2:
     st.markdown("### Dataframe Tail")
     st.dataframe(stocks_df.tail(), use_container_width=True)
+
+
+col1, col2 = st.columns([1,1])
+with col1:
+    st.markdown('### Price of all Stocks')
+    st.plotly_chart(interactive_plot(stocks_df))
+
+with col2:
+    st.markdown('### Price of all Stocks (Normalized)')
+    st.plotly_chart(interactive_plot(normalize_charts(stocks_df)))
+
+stocks_daily_return = daily_return(stocks_df)
+
+beta = {}
+alpha = {}
+
