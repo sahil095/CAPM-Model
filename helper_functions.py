@@ -25,10 +25,10 @@ def normalize_charts(df):
 def daily_return(df):
     df_daily_return = df.copy()
     for i in df_daily_return.columns[1:]:
-        df_daily_return[i] = df_daily_return[i].pct_change()
+        df_daily_return[i] = df_daily_return[i].pct_change() * 100
+        df_daily_return[i][0] = 0
     return df_daily_return
 
 def calculate_beta(stocks_daily_return, stock):
-    rm = stocks_daily_return['sp500'].mean() * 252
     b, a = np.polyfit(stocks_daily_return['sp500'], stocks_daily_return[stock], 1)
     return b, a
