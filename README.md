@@ -3,7 +3,7 @@
 - CAPM indicates that the expected return on a security is equal to the risk-free return plus a risk premium
 
         $$r_i = r_f + B_i(r_m - r_f)$$
-  $`\sqrt{3x-1}+(1+x)^2`$
+  $`r_i = r_f + B_i(r_m - r_f)`$
   
 - Variables
   - $r_i$ = Expected return on a Security
