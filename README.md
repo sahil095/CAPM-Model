@@ -2,7 +2,7 @@
 - CAPM is a model that describes the relationship between the expected return and risk of securities
 - CAPM indicates that the expected return on a security is equal to the risk-free return plus a risk premium
 
-        $r_i$ = $r_f$ + $B_i$($r_m$ - $r_f$)
+        $r_i = r_f + B_i(r_m - r_f)$
   
 - Variables
   - $r_i$ = Expected return on a Security
